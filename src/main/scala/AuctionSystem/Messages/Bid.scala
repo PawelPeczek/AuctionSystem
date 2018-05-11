@@ -1,3 +1,5 @@
 package AuctionSystem.Messages
 
-final case class Bid(value: Double)
+import akka.actor.ActorRef
+
+final case class Bid(value: Double, buyer: ActorRef)

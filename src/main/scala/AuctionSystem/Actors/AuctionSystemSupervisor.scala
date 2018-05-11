@@ -11,22 +11,16 @@ object AuctionSystemSupervisor {
 
 class AuctionSystemSupervisor extends Actor with ActorLogging {
 
-  private var nextId : Int = 0
 
-  override val supervisorStrategy =
-    OneForOneStrategy(maxNrOfRetries = 10, withinTimeRange = 1 minute) {
-      case _:Exception => Restart
-    }
-
+//  override val supervisorStrategy =
+//    OneForOneStrategy(maxNrOfRetries = 10, withinTimeRange = 1 minute) {
+//      case _:Exception => Restart
+//    }
+//
   override def receive: Receive = {
-    case StartServer => spawn_server()
+    case StartServer =>
   }
 
-  def spawn_server() = {
-    nextId += 1
-    context.actorOf(CounterServer.props(nextId, "server"), "server-" + nextId)
-    sender() ! "ok"
-  }
 
   override def preStart(): Unit = log.info("AuctionSystem has started.")
 
