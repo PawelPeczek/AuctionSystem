@@ -24,14 +24,14 @@ class Buyer(buyName: String, auctions: List[ActorRef], limits: HashMap[String, D
       log.info("Buyer {} is starting bids!", buyName)
       initializeBids()
       startBids()
-    case MakeBidResponse(OK, actName) =>
-      log.info("Buyer with actName {} is leading in auction {}", buyName, actName)
-    case MakeBidResponse(FAILED, actName) =>
-      log.info("Buyer with actName {} failed to take leadership in auction {}", buyName, actName)
-      tryToTakeLeadership(actName)
-    case MakeBidResponse(LOST_LEADERSHIP, actName) =>
-      log.info("Buyer with actName {} lost leadership in auction {}", buyName, actName)
-      tryToTakeLeadership(actName)
+    case MakeBidResponse(OK, actShortName) =>
+      log.info("Buyer with actName {} is leading in auction {}", buyName, actShortName)
+    case MakeBidResponse(FAILED, actShortName) =>
+      log.info("Buyer with actName {} failed to take leadership in auction {}", buyName, actShortName)
+      tryToTakeLeadership(actShortName)
+    case MakeBidResponse(LOST_LEADERSHIP, actShortName) =>
+      log.info("Buyer with actName {} lost leadership in auction {}", buyName, actShortName)
+      tryToTakeLeadership(actShortName)
     case AuctionFinalStatus(actName, bidValue, _, _) =>
       log.info("Buyer with name {} won the auction {} with value {}", buyName, actName, bidValue)
   }

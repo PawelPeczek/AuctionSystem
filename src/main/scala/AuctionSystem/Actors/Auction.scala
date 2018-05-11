@@ -25,14 +25,14 @@ class Auction(name : String, bidTimeout : FiniteDuration, deleteTimeout : Finite
       log.info("Started auction {} with timeout {}s", name, bidTimeout.toSeconds)
       seller ! "ok"
       setCancelBidTimeout()
-      created()
+      context become created
   }
 
   def created(): Receive = {
     case BidTimerExpired =>
       log.info("Auction {} exceeded bidTimeout", name)
       setDeleteBidTimeout()
-      ignored()
+      context become ignored
     case Bid(_value, _buyer) =>
       log.info("Auction {} received bid from {}. Value: {}", name, _buyer.path.name, _value)
       activate_loop(_value, _buyer)
@@ -43,15 +43,17 @@ class Auction(name : String, bidTimeout : FiniteDuration, deleteTimeout : Finite
       log.info("Auction {} exceeded deleteTimeout and is closing", name)
       context.stop(self)
     case Relist =>
-      cancelBidTimeout.cancel()
+      cancelDeleteTimeout.cancel()
       log.info("Auction {} got relist message", name)
+      setCancelBidTimeout()
+      context become created
   }
 
   def activated(): Receive = {
     case BidTimerExpired =>
       setDeleteBidTimeout()
       notify_parties()
-      sold()
+      context become sold
     case Bid(_value, _buyer) => activate_loop(_value, _buyer)
   }
 
@@ -60,15 +62,15 @@ class Auction(name : String, bidTimeout : FiniteDuration, deleteTimeout : Finite
       cancelBidTimeout.cancel()
       log.info("Auction {} got valid bid", name)
       bidValue = _value
-      _buyer ! MakeBidResponse(OK, name)
-      buyer ! MakeBidResponse(LOST_LEADERSHIP, name)
+      _buyer ! MakeBidResponse(OK, self.path.name)
+      buyer ! MakeBidResponse(LOST_LEADERSHIP, self.path.name)
       seller ! AuctionUpdateStatus(name, bidValue, _buyer)
       buyer = _buyer
       setCancelBidTimeout()
     } else {
-      _buyer !  MakeBidResponse(FAILED, name)
+      _buyer !  MakeBidResponse(FAILED, self.path.name)
     }
-    activated()
+    context become activated
   }
 
   def sold(): Receive = {
