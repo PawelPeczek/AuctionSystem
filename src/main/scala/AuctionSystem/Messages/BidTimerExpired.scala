@@ -1,0 +1,3 @@
+package AuctionSystem.Messages
+
+case object BidTimerExpired extends ActionMessage
