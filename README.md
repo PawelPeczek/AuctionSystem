@@ -1,0 +1,3 @@
+# Auction System
+Reactive programming in Scala using Akka.
+Project in progress...
