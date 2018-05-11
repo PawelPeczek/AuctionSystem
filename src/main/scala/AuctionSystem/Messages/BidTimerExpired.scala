@@ -1,3 +1,0 @@
-package AuctionSystem.Messages
-
-case object BidTimerExpired

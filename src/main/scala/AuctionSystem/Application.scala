@@ -1,9 +1,10 @@
 package AuctionSystem
 
-import akka.actor.ActorSystem
+import AuctionSystem.FSMInitializer.Initializer
 
 object Application {
   def main(args: Array[String]): Unit = {
-    val system = ActorSystem("AuctionSystem")
+    val init = new Initializer
+    init.initialize()
   }
 }

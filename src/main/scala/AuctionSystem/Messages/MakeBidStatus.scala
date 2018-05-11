@@ -1,7 +1,8 @@
 package AuctionSystem.Messages
 
-case class MakeBidStatus()
+class MakeBidStatus()
 
+case object StartBid
 case object OK extends MakeBidStatus
 case object FAILED extends MakeBidStatus
 case object LOST_LEADERSHIP extends MakeBidStatus

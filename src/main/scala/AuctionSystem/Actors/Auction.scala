@@ -18,6 +18,8 @@ class Auction(name : String, bidTimeout : FiniteDuration, deleteTimeout : Finite
   private var cancelDeleteTimeout: Cancellable = Cancellable.alreadyCancelled
   private var buyer : ActorRef = ActorRef.noSender
 
+  override def postStop(): Unit = log.info("Auction {} has stopped", name)
+
   override def receive: Receive = {
     case StartAuction =>
       log.info("Started auction {} with timeout {}s", name, bidTimeout.toSeconds)
@@ -31,7 +33,9 @@ class Auction(name : String, bidTimeout : FiniteDuration, deleteTimeout : Finite
       log.info("Auction {} exceeded bidTimeout", name)
       setDeleteBidTimeout()
       ignored()
-    case Bid(_value, _buyer) => activate_loop(_value, _buyer)
+    case Bid(_value, _buyer) =>
+      log.info("Auction {} received bid from {}. Value: {}", name, _buyer.path.name, _value)
+      activate_loop(_value, _buyer)
   }
 
   def ignored(): Receive = {
@@ -58,6 +62,7 @@ class Auction(name : String, bidTimeout : FiniteDuration, deleteTimeout : Finite
       bidValue = _value
       _buyer ! MakeBidResponse(OK, name)
       buyer ! MakeBidResponse(LOST_LEADERSHIP, name)
+      seller ! AuctionUpdateStatus(name, bidValue, _buyer)
       buyer = _buyer
       setCancelBidTimeout()
     } else {
@@ -69,10 +74,11 @@ class Auction(name : String, bidTimeout : FiniteDuration, deleteTimeout : Finite
   def sold(): Receive = {
     case DeleteTimerExpired =>
       log.info("Item {} is deleting", name)
+      context.stop(self)
   }
 
   def notify_parties(): Unit ={
-    val status = AuctionStatus(name, bidValue, seller, buyer)
+    val status = AuctionFinalStatus(name, bidValue, seller, buyer)
     seller ! status
     buyer ! status
   }

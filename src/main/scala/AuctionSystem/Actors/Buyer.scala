@@ -15,10 +15,15 @@ class Buyer(buyName: String, auctions: List[ActorRef], limits: HashMap[String, D
   val epsilon: Double = 0.5
   val currentBids: mutable.HashMap[String, Double] = mutable.HashMap()
 
+  override def preStart(): Unit = log.info("Buyer {} has started", buyName)
+
+  override def postStop(): Unit = log.info("Buyer {} has stopped", buyName)
+
   override def receive: Receive = {
-    case "start" =>
+    case StartBid =>
+      log.info("Buyer {} is starting bids!", buyName)
       initializeBids()
-      
+      startBids()
     case MakeBidResponse(OK, actName) =>
       log.info("Buyer with actName {} is leading in auction {}", buyName, actName)
     case MakeBidResponse(FAILED, actName) =>
@@ -27,7 +32,7 @@ class Buyer(buyName: String, auctions: List[ActorRef], limits: HashMap[String, D
     case MakeBidResponse(LOST_LEADERSHIP, actName) =>
       log.info("Buyer with actName {} lost leadership in auction {}", buyName, actName)
       tryToTakeLeadership(actName)
-    case AuctionStatus(actName, bidValue, seller, buyer) =>
+    case AuctionFinalStatus(actName, bidValue, _, _) =>
       log.info("Buyer with name {} won the auction {} with value {}", buyName, actName, bidValue)
   }
 
@@ -39,10 +44,9 @@ class Buyer(buyName: String, auctions: List[ActorRef], limits: HashMap[String, D
   }
   
   def startBids() : Unit = {
-    var it: Int = 0
     for(auction <- auctions){
       auction ! Bid(currentBids(auction.path.name), self)
-      it += 1
+      log.info("Buyer {} sent bid to auction {}", buyName, auction.path.name)
     }
   }
 
