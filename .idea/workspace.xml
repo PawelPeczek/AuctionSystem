@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a85aa53-119b-4e9f-a92b-7a301280046e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_12_6_jar.xml" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_12_6_jar.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/auctionsystem-build.iml" afterPath="$PROJECT_DIR$/.idea/modules/auctionsystem-build.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_xml_2_12_1_0_6_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_reflect_2_12_6_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalactic_scalactic_2_12_3_0_5_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_2_12_3_0_5_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/AuctionSystem/Actors/AuctionSpec.scala" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/auctionsystem.iml" afterPath="$PROJECT_DIR$/.idea/modules/auctionsystem.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" afterPath="$PROJECT_DIR$/.idea/sbt.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" afterPath="$PROJECT_DIR$/build.sbt" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -46,8 +44,8 @@
       <file leaf-file-name="Auction.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="88" column="11" lean-forward="false" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="11" />
+            <state relative-caret-position="1335">
+              <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="52" selection-end-line="91" selection-end-column="65" />
               <folding>
                 <element signature="e#30#77#0" expanded="true" />
               </folding>
@@ -55,17 +53,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.sbt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.sbt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="57" lean-forward="true" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+            <state relative-caret-position="150">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuctionSearch.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuctionSpec.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/AuctionSystem/Actors/AuctionSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1260">
+              <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+              <folding>
+                <element signature="e#30#122#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuctionSearch.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-245">
@@ -80,8 +90,8 @@
       <file leaf-file-name="Buyer.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="79" column="31" lean-forward="false" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="31" />
+            <state relative-caret-position="322">
+              <caret line="105" column="28" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -90,8 +100,8 @@
       <file leaf-file-name="Seller.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="589">
+              <caret line="67" column="70" lean-forward="false" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
               <folding>
                 <element signature="e#30#78#0" expanded="true" />
               </folding>
@@ -102,8 +112,8 @@
       <file leaf-file-name="AuctionSpecification.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -122,9 +132,11 @@
       <file leaf-file-name="Initializer.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="155">
+              <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+              <folding>
+                <element signature="e#38#84#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,9 +146,12 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>epsilon</find>
-      <find>SystemUs</find>
       <find>activate_loop</find>
       <find>context</find>
+      <find>BID</find>
+      <find>created</find>
+      <find>!</find>
+      <find>SystemUs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,11 +166,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/AuctionSystem/Actors/ActorSpec.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
+        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/AuctionSystem/Actors/AuctionSpec.scala" />
       </list>
     </option>
   </component>
@@ -206,6 +224,69 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AuctionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AuctionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AuctionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="Actors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AuctionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="ActorsSpecifications" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AuctionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="FSMInitializer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AuctionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AuctionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AuctionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="Actors" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -232,7 +313,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="ScalaTest.AuctionSpec">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -300,6 +381,36 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
+    <configuration name="ActorSpec" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="auctionsystem" />
+      <setting name="path" value="AuctionSystem.Actors.ActorSpec" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <envs />
+      <setting name="testKind" value="Class" />
+      <setting name="path" value="AuctionSystem.Actors.ActorSpec" />
+    </configuration>
+    <configuration name="AuctionSpec" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="auctionsystem" />
+      <setting name="path" value="AuctionSystem.Actors.AuctionSpec" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <envs />
+      <setting name="testKind" value="Class" />
+      <setting name="path" value="AuctionSystem.Actors.AuctionSpec" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -333,40 +444,27 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.Application" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.ActorSpec" />
+      <item index="2" class="java.lang.String" itemvalue="ScalaTest.AuctionSpec" />
+    </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Application" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.AuctionSpec" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Application" />
+        <item index="2" class="java.lang.String" itemvalue="ScalaTest.ActorSpec" />
       </list>
     </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
-    <option name="lastUpdateTimestamp" value="1526148889302" />
+    <option name="lastUpdateTimestamp" value="1526161049910" />
     <option name="availableProjects">
       <map>
         <entry>
           <key>
             <ExternalProjectPojo>
               <option name="name" value="AuctionSystem" />
-              <option name="path" value="$PROJECT_DIR$" />
-            </ExternalProjectPojo>
-          </key>
-          <value>
-            <list>
-              <ExternalProjectPojo>
-                <option name="name" value="auctionsystem" />
-                <option name="path" value="$PROJECT_DIR$" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value="auctionsystem-build" />
-                <option name="path" value="$PROJECT_DIR$/project" />
-              </ExternalProjectPojo>
-            </list>
-          </value>
-        </entry>
-        <entry>
-          <key>
-            <ExternalProjectPojo>
-              <option name="name" value="auctionsystem" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
@@ -393,7 +491,6 @@
         <entry key="$USER_HOME$/Downloads/Reductions" value="PREVIEW" />
         <entry key="$USER_HOME$/Downloads/calculator" value="PREVIEW" />
         <entry key="$USER_HOME$/Downloads/kmeans" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$" value="IMPORT" />
         <entry key="$PROJECT_DIR$/../LineOfSight" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../calculator" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../example" value="PREVIEW" />
@@ -415,15 +512,48 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526148827671</updated>
-      <workItem from="1526148833073" duration="9097000" />
+      <workItem from="1526148833073" duration="16697000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="AuctionSpec - 2018.05.13 at 00h 40m 31s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 00h 42m 31s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 00h 43m 32s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 00h 44m 00s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 01h 01m 24s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 01h 02m 16s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 01h 02m 36s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 01h 09m 21s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 01h 27m 24s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 01h 28m 11s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9097000" />
+    <option name="totallyTimeSpent" value="16697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="798" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="sbt" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -438,14 +568,14 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965517" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292011" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.031680442" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292011" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -469,10 +599,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala">
+    <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="105" column="28" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -485,21 +623,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-245">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        <state relative-caret-position="1335">
+          <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="52" selection-end-line="91" selection-end-column="65" />
           <folding>
-            <element signature="e#30#86#0" expanded="true" />
+            <element signature="e#30#77#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="155">
+          <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding>
+            <element signature="e#38#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/AuctionSystem/Actors/AuctionSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding>
+            <element signature="e#30#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="67" column="70" lean-forward="false" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
+          <folding>
+            <element signature="e#30#78#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -511,39 +679,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="79" column="31" lean-forward="false" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="-245">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding>
-            <element signature="e#30#78#0" expanded="true" />
+            <element signature="e#30#86#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="88" column="11" lean-forward="false" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="11" />
-          <folding>
-            <element signature="e#30#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="57" lean-forward="true" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>

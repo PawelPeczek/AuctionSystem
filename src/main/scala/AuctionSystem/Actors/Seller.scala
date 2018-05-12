@@ -57,7 +57,6 @@ class Seller(sellerNname: String) extends SystemUser {
     registeredStatus onComplete {
       case Success(resp) =>
         dispatchResponse(resp, specs.auctName)
-        registeredAuction ! StartAuction
       case Failure(e) => log.error(e, e.getMessage)
     }
 
