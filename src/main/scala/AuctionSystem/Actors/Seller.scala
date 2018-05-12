@@ -1,13 +1,19 @@
 package AuctionSystem.Actors
 
-import AuctionSystem.Messages.{AuctionFinalStatus, AuctionUpdateStatus, MakeAuction}
-import akka.actor.{Actor, ActorLogging, Props}
+import akka.actor.{ActorRef, Props}
+
+import scala.concurrent.duration.FiniteDuration
 
 object Seller{
   def props(name: String): Props = Props(new Seller(name))
+  final case class AuctionUpdateStatus(auctName: String, value: Double, leader: ActorRef)
+  final case class MakeAuction(auctName: String, auctPathName: String,  bidTimeout : FiniteDuration,
+                               deleteTimeout : FiniteDuration, bidValue: Double = 0)
 }
 
-class Seller(name: String) extends Actor with ActorLogging  {
+class Seller(name: String) extends SystemUser {
+  import SystemUser._
+  import Seller._
   private var auctionCounter: Int = 0
 
   override def preStart(): Unit = log.info("Seller {} has started", name)
@@ -20,7 +26,7 @@ class Seller(name: String) extends Actor with ActorLogging  {
       sender() ! auction
       auctionCounter += 1
     case AuctionUpdateStatus(auctName, value, leader) =>
-      log.info("Seller {}: new bid on auction {} from {}. Current value {}", name, auctName, value, leader.path.name)
+      log.info("Seller {}: new bid on auction {} from {}. Current value {}", name, auctName, leader.path.name, value)
     case AuctionFinalStatus(auctName, value, _, buyer) =>
       log.info("Seller {}: item from auction {} was sold to {} for {}", name, auctName, buyer.path.name, value)
       auctionCounter -= 1

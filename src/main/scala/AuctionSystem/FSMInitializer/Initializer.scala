@@ -1,12 +1,13 @@
 package AuctionSystem.FSMInitializer
 
+import AuctionSystem.Actors.Auction.StartAuction
+import AuctionSystem.Actors.Buyer.StartBid
+import AuctionSystem.Actors.Seller.MakeAuction
 import AuctionSystem.Actors.{Buyer, Seller}
-import AuctionSystem.Messages.{MakeAuction, StartAuction, StartBid}
 import akka.actor.{ActorRef, ActorSystem}
 import akka.util.Timeout
 import akka.pattern.ask
 
-import scala.util.{Failure, Success}
 import scala.collection.immutable.HashMap
 import scala.concurrent.Await
 import scala.concurrent.duration._
@@ -29,10 +30,10 @@ class Initializer {
       val shortA2Name = "a2"
       val shortA3Name = "a3"
       val shortA4Name = "a4"
-      val fauct1 = seller1 ? MakeAuction(auct1Name, shortA1Name, 1 minute, 15 seconds, 20)
-      val fauct2 = seller1 ? MakeAuction(auct2Name, shortA2Name, 30 seconds, 15 seconds, 13)
-      val fauct3 = seller2 ? MakeAuction(auct3Name, shortA3Name, 40 seconds, 10 seconds, 2)
-      val fauct4 = seller3 ? MakeAuction(auct4Name, shortA4Name, 35 seconds, 15 seconds, 5)
+      val fauct1 = seller1 ? MakeAuction(auct1Name, shortA1Name, 25 seconds, 5 seconds, 20)
+      val fauct2 = seller1 ? MakeAuction(auct2Name, shortA2Name, 15 seconds, 5 seconds, 13)
+      val fauct3 = seller2 ? MakeAuction(auct3Name, shortA3Name, 35 seconds, 5 seconds, 2)
+      val fauct4 = seller3 ? MakeAuction(auct4Name, shortA4Name, 30 seconds, 5 seconds, 5)
       var auct1 : ActorRef = Await.result(fauct1, 1 minute).asInstanceOf[ActorRef]
       var auct2 : ActorRef = Await.result(fauct2, 1 minute).asInstanceOf[ActorRef]
       var auct3 : ActorRef = Await.result(fauct3, 1 minute).asInstanceOf[ActorRef]
