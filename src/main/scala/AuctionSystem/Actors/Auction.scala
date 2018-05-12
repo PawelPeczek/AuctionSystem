@@ -4,7 +4,6 @@ import AuctionSystem.Actors.Buyer.AuctionClosed
 import AuctionSystem.ActorsSpecifications.AuctionSpecification
 import akka.actor.{Actor, ActorLogging, ActorRef, Cancellable, Props}
 
-import scala.collection.mutable
 
 object Auction {
   def props(seller : ActorRef, specs: AuctionSpecification): Props =
@@ -26,7 +25,7 @@ class Auction(seller: ActorRef, specs: AuctionSpecification) extends Actor with 
   private var cancelBidTimeout: Cancellable = Cancellable.alreadyCancelled
   private var cancelDeleteTimeout: Cancellable = Cancellable.alreadyCancelled
   private var buyer : ActorRef = ActorRef.noSender
-  private val allBuyersThatMadeBid: mutable.Set[ActorRef] = mutable.Set()
+  private var allBuyersThatMadeBid: Set[ActorRef] = Set()
 
   override def postStop(): Unit = log.info("Auction {} has stopped", specs.auctName)
 

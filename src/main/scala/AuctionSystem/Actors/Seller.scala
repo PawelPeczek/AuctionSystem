@@ -11,6 +11,7 @@ import scala.concurrent.duration._
 import scala.util.{Failure, Success}
 import scala.concurrent._
 import ExecutionContext.Implicits.global
+import scala.collection.GenSeq
 
 object Seller{
   def props(name: String): Props = Props(new Seller(name))
@@ -43,7 +44,7 @@ class Seller(sellerNname: String) extends SystemUser {
       if(auctionCounter == 0) context.stop(self)
   }
 
-  private def prepareBatchAuction(auctionsSpecs: List[AuctionSpecification]): Unit =
+  private def prepareBatchAuction(auctionsSpecs: GenSeq[AuctionSpecification]): Unit =
     auctionsSpecs.foreach(spawnAuction)
 
 

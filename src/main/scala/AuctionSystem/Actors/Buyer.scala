@@ -12,18 +12,16 @@ import scala.concurrent._
 
 object Buyer {
   def props(buyName: String) : Props = Props(new Buyer(buyName))
+  private val epsilon: Double = 0.5
 
   class MakeBidStatus()
   case object OK extends MakeBidStatus
   case object FAILED extends MakeBidStatus
   case object LOST_LEADERSHIP extends MakeBidStatus
-
   case object SearchFiled
 
   final case class AuctionClosed(auctName: String)
-
   final case class SearchResult(auctions: List[ActorRef])
-
   final case class MakeBidResponse(status: MakeBidStatus, name: String, currLeadingVal: Double)
   final case class TakePartIn(keywordsAndLimits: HashMap[String, Double])
 
@@ -33,9 +31,7 @@ class Buyer(buyName: String) extends SystemUser {
   import Buyer._
   import SystemUser._
   import Auction.Bid
-
-  private val epsilon: Double = 0.5
-  private val currentBids: mutable.HashMap[ActorRef, (Double, Double)] = mutable.HashMap()
+  private var currentBids: HashMap[ActorRef, (Double, Double)] = HashMap()
 
   override def preStart(): Unit = log.info("Buyer {} has started", buyName)
 
@@ -71,7 +67,7 @@ class Buyer(buyName: String) extends SystemUser {
     val foundAuctions = findAllAuctions(keywordsAndLimits)
     val auctToStart = foundAuctions.filter(e => !currentBids.keySet.contains(e._1))
     auctToStart.foreach(e => {
-      currentBids.put(e._1, (0, e._2))
+      currentBids += e._1 -> (0, e._2)
     })
     auctToStart.foreach(e => {
       e._1 ! Bid(buyName, currentBids(e._1)._1)
@@ -120,6 +116,6 @@ class Buyer(buyName: String) extends SystemUser {
   }
 
   def updateCurrBid(currLeadingVal: Double): Unit = {
-    currentBids(sender()) = (currLeadingVal + epsilon, currentBids(sender())._2)
+    currentBids += sender() -> (currLeadingVal + epsilon, currentBids(sender())._2)
   }
 }
