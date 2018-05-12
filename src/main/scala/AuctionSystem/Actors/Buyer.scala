@@ -7,10 +7,8 @@ import akka.util.Timeout
 import scala.collection.immutable.HashMap
 import scala.collection.mutable
 import scala.concurrent.duration._
-import scala.util.{Failure, Success}
-
 import scala.concurrent._
-import ExecutionContext.Implicits.global
+
 
 object Buyer {
   def props(buyName: String) : Props = Props(new Buyer(buyName))
@@ -21,6 +19,8 @@ object Buyer {
   case object LOST_LEADERSHIP extends MakeBidStatus
 
   case object SearchFiled
+
+  final case class AuctionClosed(auctName: String)
 
   final case class SearchResult(auctions: List[ActorRef])
 
@@ -34,8 +34,8 @@ class Buyer(buyName: String) extends SystemUser {
   import SystemUser._
   import Auction.Bid
 
-  val epsilon: Double = 0.5
-  val currentBids: mutable.HashMap[ActorRef, (Double, Double)] = mutable.HashMap()
+  private val epsilon: Double = 0.5
+  private val currentBids: mutable.HashMap[ActorRef, (Double, Double)] = mutable.HashMap()
 
   override def preStart(): Unit = log.info("Buyer {} has started", buyName)
 
@@ -43,7 +43,9 @@ class Buyer(buyName: String) extends SystemUser {
 
 
   override def receive: Receive = {
-    case TakePartIn(keywordsAndLimits) => launchBids(keywordsAndLimits)
+    case TakePartIn(keywordsAndLimits) =>
+      log.info("Buyer {} received TakePartIn request", buyName)
+      launchBids(keywordsAndLimits)
     case MakeBidResponse(OK, actName, currLeadingVal) =>
       log.info("Buyer {} is leading in auction {} (current leading value: {})",
               buyName, actName, currLeadingVal)
@@ -57,15 +59,22 @@ class Buyer(buyName: String) extends SystemUser {
       tryToTakeLeadership(actName, currLeadingVal)
     case AuctionFinalStatus(actName, bidValue, _, _) =>
       log.info("Buyer {} won the auction {} with value {}", buyName, actName, bidValue)
+      currentBids -= sender()
+    case AuctionClosed(auctName) =>
+      if(currentBids.contains(sender())){
+        log.info("Buyer {} remove auction {} from their active auctions' list", buyName, auctName)
+        currentBids -= sender()
+      }
   }
 
   private def launchBids(keywordsAndLimits: HashMap[String, Double]): Unit = {
     val foundAuctions = findAllAuctions(keywordsAndLimits)
     val auctToStart = foundAuctions.filter(e => !currentBids.keySet.contains(e._1))
-    auctToStart.foreach(e => currentBids.put(e._1, (0, e._2)))
+    auctToStart.foreach(e => {
+      currentBids.put(e._1, (0, e._2))
+    })
     auctToStart.foreach(e => {
       e._1 ! Bid(buyName, currentBids(e._1)._1)
-      log.info("Buyer {} sent bid to auction {}", buyName, e._1.path.name)
     })
   }
 
@@ -78,20 +87,18 @@ class Buyer(buyName: String) extends SystemUser {
     keywordsAndLimits.foreach {
       keyAndLimit => {
         val response = auctionSearch ? Find(keyAndLimit._1)
-        response onComplete {
-          case Success(resp) => dispatchResponse(resp, allFound, keyAndLimit)
-          case Failure(e) => log.error(e, e.getMessage)
-        }
+        dispatchResponse(Await.result(response, 500 millis), allFound, keyAndLimit)
       }
     }
-
     allFound
   }
 
   private def dispatchResponse(response: Any, allFound: mutable.HashMap[ActorRef, Double], keyToLim: (String, Double)): Unit = {
     import Buyer.SearchResult
     response match {
-      case SearchResult(auct) => auct.foreach(e => allFound.put(e, keyToLim._2))
+      case SearchResult(auct) =>
+        auct.foreach(e => allFound.put(e, keyToLim._2))
+      case e:Throwable => log.error(e, "Error while trying to receive auction actors reference")
       case _ => log.info("Buyer {} couldn't find any auction for keyword {}", buyName, keyToLim._1)
     }
   }

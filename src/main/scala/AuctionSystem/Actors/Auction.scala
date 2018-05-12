@@ -1,8 +1,10 @@
 package AuctionSystem.Actors
 
+import AuctionSystem.Actors.Buyer.AuctionClosed
 import AuctionSystem.ActorsSpecifications.AuctionSpecification
 import akka.actor.{Actor, ActorLogging, ActorRef, Cancellable, Props}
 
+import scala.collection.mutable
 
 object Auction {
   def props(seller : ActorRef, specs: AuctionSpecification): Props =
@@ -24,6 +26,7 @@ class Auction(seller: ActorRef, specs: AuctionSpecification) extends Actor with 
   private var cancelBidTimeout: Cancellable = Cancellable.alreadyCancelled
   private var cancelDeleteTimeout: Cancellable = Cancellable.alreadyCancelled
   private var buyer : ActorRef = ActorRef.noSender
+  private val allBuyersThatMadeBid: mutable.Set[ActorRef] = mutable.Set()
 
   override def postStop(): Unit = log.info("Auction {} has stopped", specs.auctName)
 
@@ -82,6 +85,7 @@ class Auction(seller: ActorRef, specs: AuctionSpecification) extends Actor with 
       log.info("Auction {} got invalid bid from {}. Current leading value: {}", specs.auctName, _name, bidValue)
       sender() !  MakeBidResponse(FAILED, specs.auctName, bidValue)
     }
+    allBuyersThatMadeBid += sender()
     log.info("Auction {} become ACTIVATED", specs.auctName)
     context become activated
   }
@@ -90,6 +94,7 @@ class Auction(seller: ActorRef, specs: AuctionSpecification) extends Actor with 
     case DeleteTimerExpired =>
       notify_parties()
       log.info("Item {} is deleting", specs.auctName)
+      allBuyersThatMadeBid.foreach(buyer => buyer ! AuctionClosed(specs.auctName))
       context.stop(self)
   }
 

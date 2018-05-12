@@ -1,17 +1,13 @@
 package AuctionSystem.FSMInitializer
 
-import AuctionSystem.Actors.Auction.StartAuction
 import AuctionSystem.Actors.AuctionSearch.STOP
 import AuctionSystem.Actors.Buyer.TakePartIn
 import AuctionSystem.Actors.Seller.{MakeAuction, MakeBatchAuctions}
 import AuctionSystem.Actors.{AuctionSearch, Buyer, Seller}
 import AuctionSystem.ActorsSpecifications.AuctionSpecification
-import akka.actor.{ActorRef, ActorSystem}
+import akka.actor.ActorSystem
 import akka.util.Timeout
-import akka.pattern.ask
-
 import scala.collection.immutable.HashMap
-import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.io.StdIn
 
@@ -44,12 +40,14 @@ class Initializer {
       seller2 ! MakeAuction(auctSpec3)
       seller3 ! MakeAuction(auctSpec4)
 
+      StdIn.readLine()
+      println("[ENTER PRESSED]")
       buyer1 ! TakePartIn(search1)
       buyer2 ! TakePartIn(search2)
       buyer3 ! TakePartIn(search3)
 
       StdIn.readLine()
-
+      println("[ENTER PRESSED]")
       searchActor ! STOP
     } finally {
       system.terminate()

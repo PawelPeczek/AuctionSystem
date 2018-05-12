@@ -1,5 +1,6 @@
 package AuctionSystem.Actors
 
+import AuctionSystem.Actors.Auction.StartAuction
 import AuctionSystem.Actors.AuctionSearch.Register
 import AuctionSystem.ActorsSpecifications.AuctionSpecification
 import akka.actor.{ActorRef, Props}
@@ -53,7 +54,9 @@ class Seller(sellerNname: String) extends SystemUser {
     val registeredAuction = context.actorOf(Auction.props(self, specs))
     val registeredStatus = auctionSearch ? Register(specs.auctName, registeredAuction)
     registeredStatus onComplete {
-      case Success(resp) => dispatchResponse(resp, specs.auctName)
+      case Success(resp) =>
+        dispatchResponse(resp, specs.auctName)
+        registeredAuction ! StartAuction
       case Failure(e) => log.error(e, e.getMessage)
     }
 
