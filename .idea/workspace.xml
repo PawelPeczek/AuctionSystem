@@ -31,7 +31,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Application.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Application.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Application.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -75,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuctionSearch.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuctionSearch.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-245">
-              <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+            <state relative-caret-position="289">
+              <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
               <folding>
                 <element signature="e#30#86#0" expanded="true" />
               </folding>
@@ -313,7 +313,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="ScalaTest.AuctionSpec">
+  <component name="RunManager" selected="Application.Application">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -451,8 +451,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="ScalaTest.AuctionSpec" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Application" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Application" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.AuctionSpec" />
         <item index="2" class="java.lang.String" itemvalue="ScalaTest.ActorSpec" />
       </list>
     </recent_temporary>
@@ -512,14 +512,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526148827671</updated>
-      <workItem from="1526148833073" duration="16697000" />
+      <workItem from="1526148833073" duration="16776000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AuctionSpec - 2018.05.13 at 00h 40m 31s.xml">
-      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
     <history-entry file="AuctionSpec - 2018.05.13 at 00h 42m 31s.xml">
       <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
@@ -547,13 +544,15 @@
     <history-entry file="AuctionSpec - 2018.05.13 at 01h 28m 11s.xml">
       <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
+    <history-entry file="AuctionSpec - 2018.05.13 at 01h 40m 16s.xml">
+      <configuration name="AuctionSpec" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16697000" />
+    <option name="totallyTimeSpent" value="16776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="798" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="sbt" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -572,7 +571,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292011" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292011" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -611,14 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="105" column="28" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Application.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -681,11 +672,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-245">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        <state relative-caret-position="289">
+          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding>
             <element signature="e#30#86#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Application.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
