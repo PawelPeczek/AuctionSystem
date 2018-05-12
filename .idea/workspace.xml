@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ccce14b-27c8-4fbd-b750-1c7027bc43de" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/SystemUser.scala" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala" afterPath="$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/AuctionFinalStatus.scala" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/AuctionUpdateStatus.scala" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/Bid.scala" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/FSMMessages.scala" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeAuction.scala" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeBidStatus.scala" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,25 +30,25 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Auction.scala" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Auction.scala" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-226">
-                  <caret line="82" column="94" lean-forward="false" selection-start-line="82" selection-start-column="94" selection-end-line="82" selection-end-column="94" />
+                <state relative-caret-position="324">
+                  <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
                   <folding>
-                    <element signature="e#30#99#0" expanded="true" />
-                    <element signature="e#718#743#0" expanded="true" />
-                    <element signature="e#2309#2323#0" expanded="true" />
+                    <element signature="e#30#92#0" expanded="true" />
+                    <element signature="e#555#580#0" expanded="true" />
+                    <element signature="e#2326#2340#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Initializer.scala" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Initializer.scala" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="624">
-                  <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+                <state relative-caret-position="536">
+                  <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
                   <folding>
                     <element signature="e#38#86#0" expanded="true" />
                   </folding>
@@ -74,16 +69,38 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="Seller.scala" pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Seller.scala" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="332">
-                  <caret line="29" column="57" lean-forward="true" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+                <state relative-caret-position="570">
+                  <caret line="53" column="42" lean-forward="false" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
                   <folding>
-                    <element signature="e#30#65#0" expanded="true" />
-                    <element signature="e#519#538#0" expanded="true" />
+                    <element signature="e#30#80#0" expanded="true" />
+                    <element signature="e#799#818#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AuctionSearch.scala" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="54">
+                  <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#30#86#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AuctionSpecification.scala" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="216">
+                  <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -101,11 +118,10 @@
           <file leaf-file-name="Buyer.scala" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="152">
-                  <caret line="70" column="60" lean-forward="false" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="60" />
+                <state relative-caret-position="144">
+                  <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="40" />
                   <folding>
-                    <element signature="e#30#65#0" expanded="true" />
-                    <element signature="e#698#712#0" expanded="true" />
+                    <element signature="e#883#897#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -171,10 +187,13 @@
         <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/AuctionUpdateStatus.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeAuction.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/Bid.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecyfication.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala" />
       </list>
     </option>
   </component>
@@ -253,6 +272,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="ActorsSpecifications" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AuctionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="AuctionSystem" type="462c0819:PsiDirectoryNode" />
               <item name="FSMInitializer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -265,10 +293,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,12 +463,13 @@
       <option name="presentableId" value="Default" />
       <updated>1526034665854</updated>
       <workItem from="1526034669407" duration="27782000" />
-      <workItem from="1526115348787" duration="5718000" />
+      <workItem from="1526115348787" duration="18467000" />
+      <workItem from="1526134847218" duration="1903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33500000" />
+    <option name="totallyTimeSpent" value="48152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="2560" height="1053" extended-state="6" />
@@ -477,38 +506,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="sbt" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20770878" sideWeight="0.503125" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.70642203" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35331905" sideWeight="0.496875" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09804688" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -521,21 +518,61 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeBidStatus.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#30#80#0" expanded="true" />
+            <element signature="e#799#818#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="63" column="79" lean-forward="false" selection-start-line="63" selection-start-column="79" selection-end-line="63" selection-end-column="79" />
+          <folding>
+            <element signature="e#30#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/SystemUser.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="95" column="30" lean-forward="false" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+          <folding>
+            <element signature="e#883#897#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeBidStatus.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
           <folding>
-            <element signature="e#30#65#0" expanded="true" />
-            <element signature="e#519#538#0" expanded="true" />
+            <element signature="e#30#80#0" expanded="true" />
+            <element signature="e#799#818#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -544,7 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7632">
           <caret line="424" column="0" lean-forward="false" selection-start-line="424" selection-start-column="0" selection-end-line="424" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -553,8 +589,7 @@
         <state relative-caret-position="630">
           <caret line="35" column="86" lean-forward="false" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="86" />
           <folding>
-            <element signature="e#30#65#0" expanded="true" />
-            <element signature="e#698#712#0" expanded="true" />
+            <element signature="e#883#897#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -577,38 +612,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/Bid.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/FSMMessages.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeAuction.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/Bid.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/FSMMessages.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeAuction.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
           <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <element signature="e#30#99#0" expanded="true" />
-            <element signature="e#718#743#0" expanded="true" />
-            <element signature="e#2309#2323#0" expanded="true" />
+            <element signature="e#30#92#0" expanded="true" />
+            <element signature="e#555#580#0" expanded="true" />
+            <element signature="e#2326#2340#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -629,13 +643,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/Count.scala" />
-    <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.12-sources.jar!/akka/actor/Actor.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="557" column="6" lean-forward="false" selection-start-line="557" selection-start-column="6" selection-end-line="557" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.12-sources.jar!/akka/actor/FaultHandling.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -669,54 +676,12 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/StartAuction.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/StartServer.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/SellerMessages.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/FSMMessages.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeAuction.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/AuctionFinalStatus.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/AuctionUpdateStatus.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/Bid.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeBidStatus.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/FSMMessages.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeAuction.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/AuctionFinalStatus.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/AuctionUpdateStatus.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/Bid.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Messages/MakeBidStatus.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Application.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -725,44 +690,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-          <folding>
-            <element signature="e#38#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.6-sources.jar!/scala/collection/immutable/List.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="424" column="0" lean-forward="false" selection-start-line="424" selection-start-column="0" selection-end-line="424" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala">
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.12-sources.jar!/akka/pattern/AskSupport.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-226">
-          <caret line="82" column="94" lean-forward="false" selection-start-line="82" selection-start-column="94" selection-end-line="82" selection-end-column="94" />
-          <folding>
-            <element signature="e#30#99#0" expanded="true" />
-            <element signature="e#718#743#0" expanded="true" />
-            <element signature="e#2309#2323#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="70" column="60" lean-forward="false" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="60" />
-          <folding>
-            <element signature="e#30#65#0" expanded="true" />
-            <element signature="e#698#712#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="191">
+          <caret line="376" column="6" lean-forward="false" selection-start-line="376" selection-start-column="6" selection-end-line="376" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -774,13 +712,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.12-sources.jar!/akka/actor/Actor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="289" column="19" lean-forward="false" selection-start-line="289" selection-start-column="19" selection-end-line="289" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Auction.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding>
+            <element signature="e#30#92#0" expanded="true" />
+            <element signature="e#555#580#0" expanded="true" />
+            <element signature="e#2326#2340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Buyer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="40" />
+          <folding>
+            <element signature="e#883#897#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/ActorsSpecifications/AuctionSpecification.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/Seller.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="29" column="57" lean-forward="true" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+        <state relative-caret-position="570">
+          <caret line="53" column="42" lean-forward="false" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
           <folding>
-            <element signature="e#30#65#0" expanded="true" />
-            <element signature="e#519#538#0" expanded="true" />
+            <element signature="e#30#80#0" expanded="true" />
+            <element signature="e#799#818#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/Actors/AuctionSearch.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="17" />
+          <folding>
+            <element signature="e#30#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/AuctionSystem/FSMInitializer/Initializer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#86#0" expanded="true" />
           </folding>
         </state>
       </provider>

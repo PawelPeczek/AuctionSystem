@@ -1,9 +1,11 @@
 package AuctionSystem.FSMInitializer
 
 import AuctionSystem.Actors.Auction.StartAuction
-import AuctionSystem.Actors.Buyer.StartBid
-import AuctionSystem.Actors.Seller.MakeAuction
-import AuctionSystem.Actors.{Buyer, Seller}
+import AuctionSystem.Actors.AuctionSearch.STOP
+import AuctionSystem.Actors.Buyer.TakePartIn
+import AuctionSystem.Actors.Seller.{MakeAuction, MakeBatchAuctions}
+import AuctionSystem.Actors.{AuctionSearch, Buyer, Seller}
+import AuctionSystem.ActorsSpecifications.AuctionSpecification
 import akka.actor.{ActorRef, ActorSystem}
 import akka.util.Timeout
 import akka.pattern.ask
@@ -19,42 +21,36 @@ class Initializer {
     implicit val timeout = Timeout(5 seconds)
     val system = ActorSystem("AuctionSystem")
     try {
+      val searchActor = system.actorOf(AuctionSearch.props(), AuctionSearch.AuctionSearchActorName)
+
       val seller1 = system.actorOf(Seller.props("Mirosław"), "Miroslaw")
       val seller2 = system.actorOf(Seller.props("Janusz"), "Janusz")
       val seller3 = system.actorOf(Seller.props("Grażyna"), "Grazyna")
-      val auct1Name = "Passat 1.9 TDI"
-      val auct2Name = "Golf IV (Niemiec do granicy gonił)"
-      val auct3Name = "Sprzedam somsiada!"
-      val auct4Name = "Sprzedam psa!"
-      val shortA1Name = "a1"
-      val shortA2Name = "a2"
-      val shortA3Name = "a3"
-      val shortA4Name = "a4"
-      val fauct1 = seller1 ? MakeAuction(auct1Name, shortA1Name, 25 seconds, 5 seconds, 20)
-      val fauct2 = seller1 ? MakeAuction(auct2Name, shortA2Name, 15 seconds, 5 seconds, 13)
-      val fauct3 = seller2 ? MakeAuction(auct3Name, shortA3Name, 35 seconds, 5 seconds, 2)
-      val fauct4 = seller3 ? MakeAuction(auct4Name, shortA4Name, 30 seconds, 5 seconds, 5)
-      var auct1 : ActorRef = Await.result(fauct1, 1 minute).asInstanceOf[ActorRef]
-      var auct2 : ActorRef = Await.result(fauct2, 1 minute).asInstanceOf[ActorRef]
-      var auct3 : ActorRef = Await.result(fauct3, 1 minute).asInstanceOf[ActorRef]
-      var auct4 : ActorRef = Await.result(fauct4, 1 minute).asInstanceOf[ActorRef]
-      val list1 = List(auct1, auct2, auct4)
-      val limits1: HashMap[String, Double] = HashMap((shortA1Name, 35), (shortA2Name, 20), (shortA4Name, 7.55))
-      val list2 = List(auct2, auct3, auct4)
-      val limits2: HashMap[String, Double] = HashMap((shortA2Name, 23), (shortA3Name, 2.75), (shortA4Name, 6.95))
-      val list3 = List(auct1, auct3, auct4)
-      val limits3: HashMap[String, Double] = HashMap((shortA1Name, 36), (shortA3Name, 3), (shortA4Name, 10.55))
-      val buyer1 = system.actorOf(Buyer.props("Pjoter", list1, limits1), "Pjoter")
-      val buyer2 = system.actorOf(Buyer.props("Dżesika", list2, limits2), "Dzesika")
-      val buyer3 = system.actorOf(Buyer.props("Brajan", list3, limits3), "Brajan")
-      auct1 ! StartAuction
-      auct2 ! StartAuction
-      auct3 ! StartAuction
-      auct4 ! StartAuction
-      buyer1 ! StartBid
-      buyer2 ! StartBid
-      buyer3 ! StartBid
+
+      val auctSpec1 = AuctionSpecification("Passat 1.9 TDI", 25 seconds, 5 seconds, 20)
+      val auctSpec2 = AuctionSpecification("Golf IV 1.9 TDI (Niemiec do granicy gonił)", 15 seconds, 5 seconds, 13)
+      val auctSpec3 = AuctionSpecification("Sprzedam somsiada!", 35 seconds, 5 seconds, 2)
+      val auctSpec4 = AuctionSpecification("Sprzedam psa", 30 seconds, 5 seconds, 5)
+
+      val search1: HashMap[String, Double] = HashMap(("Passat", 35), ("1.9", 27))
+      val search2: HashMap[String, Double] = HashMap(("psa", 8.5), ("somsiada", 10))
+      val search3: HashMap[String, Double] = HashMap(("Golf", 35), ("sprzedam", 9.5))
+
+      val buyer1 = system.actorOf(Buyer.props("Pjoter"))
+      val buyer2 = system.actorOf(Buyer.props("Dżesika"))
+      val buyer3 = system.actorOf(Buyer.props("Brajan"))
+
+      seller1 ! MakeBatchAuctions(List(auctSpec1, auctSpec2))
+      seller2 ! MakeAuction(auctSpec3)
+      seller3 ! MakeAuction(auctSpec4)
+
+      buyer1 ! TakePartIn(search1)
+      buyer2 ! TakePartIn(search2)
+      buyer3 ! TakePartIn(search3)
+
       StdIn.readLine()
+
+      searchActor ! STOP
     } finally {
       system.terminate()
     }
