@@ -4,7 +4,6 @@ import AuctionSystem.Actors.Buyer.AuctionClosed
 import AuctionSystem.ActorsSpecifications.AuctionSpecification
 import akka.actor.{Actor, ActorLogging, ActorRef, Cancellable, Props}
 
-import scala.collection.mutable
 
 object Auction {
   def props(seller : ActorRef, specs: AuctionSpecification): Props =
@@ -26,19 +25,15 @@ class Auction(seller: ActorRef, specs: AuctionSpecification) extends Actor with 
   private var cancelBidTimeout: Cancellable = Cancellable.alreadyCancelled
   private var cancelDeleteTimeout: Cancellable = Cancellable.alreadyCancelled
   private var buyer : ActorRef = ActorRef.noSender
-  private val allBuyersThatMadeBid: mutable.Set[ActorRef] = mutable.Set()
+  private var allBuyersThatMadeBid: Set[ActorRef] = Set()
+
+  log.info("Started auction {} with timeout {}s", specs.auctName, specs.bidTimeout.toSeconds)
+  setCancelBidTimeout()
+  log.info("Auction {} become CREATED", specs.auctName)
 
   override def postStop(): Unit = log.info("Auction {} has stopped", specs.auctName)
 
   override def receive: Receive = {
-    case StartAuction =>
-      log.info("Started auction {} with timeout {}s", specs.auctName, specs.bidTimeout.toSeconds)
-      setCancelBidTimeout()
-      log.info("Auction {} become CREATED", specs.auctName)
-      context become created
-  }
-
-  def created(): Receive = {
     case BidTimerExpired =>
       log.info("Auction {} exceeded bidTimeout", specs.auctName)
       setDeleteBidTimeout()
@@ -58,7 +53,7 @@ class Auction(seller: ActorRef, specs: AuctionSpecification) extends Actor with 
       log.info("Auction {} got relist message", specs.auctName)
       setCancelBidTimeout()
       log.info("Auction {} become CREATED", specs.auctName)
-      context become created
+      context become receive
   }
 
   def activated(): Receive = {

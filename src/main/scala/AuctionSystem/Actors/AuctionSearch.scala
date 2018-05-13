@@ -2,6 +2,7 @@ package AuctionSystem.Actors
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
 
+import scala.collection.immutable.HashMap
 import scala.collection.mutable
 
 object AuctionSearch {
@@ -14,7 +15,7 @@ object AuctionSearch {
 
 class AuctionSearch extends Actor with ActorLogging {
   import AuctionSearch._
-  var namesToRef: mutable.HashMap[String, ActorRef] = mutable.HashMap()
+  var namesToRef: HashMap[String, ActorRef] = HashMap()
 
   override def preStart(): Unit = log.info("AuctionSearch actor {} has started", self.path.name)
 
@@ -30,7 +31,7 @@ class AuctionSearch extends Actor with ActorLogging {
     import Seller._
     log.info("AuctionSearch actor {} got registration request of auction {}", self.path.name, auctionName)
     if (!namesToRef.contains(auctionName.toLowerCase)) {
-      namesToRef.put(auctionName.toLowerCase, auctionActor)
+      namesToRef += auctionName.toLowerCase -> auctionActor
       sender() ! AuctionRegFine
       log.info("AuctionSearch actor {} registered auction {}", self.path.name, auctionName)
     } else {
@@ -42,7 +43,7 @@ class AuctionSearch extends Actor with ActorLogging {
   private def findAuctionByKeyword(keyword: String): Unit = {
     import Buyer.{SearchFiled, SearchResult}
     log.info("AuctionSearch actor {} got find request with keyword {}", self.path.name, keyword)
-    if(isKeywordValid(keyword)){
+    if(isValid(keyword)){
       provideAuctionsActorsByKeyword(keyword) match {
         case None =>
           log.info("AuctionSearch actor {} couldn't find auctions matching to {}", self.path.name, keyword)
@@ -56,15 +57,13 @@ class AuctionSearch extends Actor with ActorLogging {
     }
   }
 
-  private def isKeywordValid(keyword: String): Boolean = {
-    !keyword.contains(" ")
-  }
+  private def isValid(keyword: String): Boolean = !keyword.contains(" ")
 
   private def provideAuctionsActorsByKeyword(keyword: String): Option[List[ActorRef]] = {
     val keysToReturn = namesToRef.keySet.filter(_.contains(keyword.toLowerCase))
-    if(keysToReturn.isEmpty) None
-    else {
+    if(keysToReturn.isEmpty)
+      None
+    else
       Some(namesToRef.filter(e => keysToReturn.contains(e._1)).values.toList)
-    }
   }
 }
