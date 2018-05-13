@@ -3,13 +3,13 @@ package AuctionSystem.Actors
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
 
 import scala.collection.immutable.HashMap
-import scala.collection.mutable
 
 object AuctionSearch {
   def props(): Props = Props(new AuctionSearch())
   val AuctionSearchActorName : String = "AuctionSearchActor"
   case object STOP
   final case class Register(auctionName: String, auctionActor: ActorRef)
+  final case class UnRegister(auctionName: String)
   final case class Find(keyword: String)
 }
 
@@ -24,6 +24,7 @@ class AuctionSearch extends Actor with ActorLogging {
   override def receive: Receive = {
     case STOP => context.stop(self)
     case Register(auctionName, auctionActor) => registerAuction(auctionName, auctionActor)
+    case UnRegister(auctionName) => unRegisterAuction(auctionName)
     case Find(keyword) => findAuctionByKeyword(keyword)
   }
 
@@ -65,5 +66,10 @@ class AuctionSearch extends Actor with ActorLogging {
       None
     else
       Some(namesToRef.filter(e => keysToReturn.contains(e._1)).values.toList)
+  }
+
+  private def unRegisterAuction(auctionName: String): Unit = {
+    log.info("AuctionSearch actor {} got unRegister request of auction with name: {}", self.path.name, auctionName)
+    namesToRef -= auctionName
   }
 }

@@ -87,6 +87,9 @@ class Auction(seller: ActorRef, specs: AuctionSpecification) extends Actor with 
 
   def sold(): Receive = {
     case DeleteTimerExpired =>
+      import AuctionSearch.{AuctionSearchActorName, UnRegister}
+      val auctionSearch = context.actorSelection(s"../../$AuctionSearchActorName")
+      auctionSearch ! UnRegister(specs.auctName)
       notify_parties()
       log.info("Item {} is deleting", specs.auctName)
       allBuyersThatMadeBid.foreach(buyer => buyer ! AuctionClosed(specs.auctName))
