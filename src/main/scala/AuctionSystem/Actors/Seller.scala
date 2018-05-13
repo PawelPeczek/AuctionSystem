@@ -56,19 +56,22 @@ class Seller(sellerNname: String) extends SystemUser {
     val registeredStatus = auctionSearch ? Register(specs.auctName, registeredAuction)
     registeredStatus onComplete {
       case Success(resp) =>
-        dispatchResponse(resp, specs.auctName)
-      case Failure(e) => log.error(e, e.getMessage)
+        dispatchResponse(resp, specs.auctName, registeredAuction)
+      case Failure(e) =>
+        log.error(e, e.getMessage)
+        context.stop(registeredAuction)
     }
 
   }
 
-  def dispatchResponse(resp: Any, auctName: String): Unit = {
+  def dispatchResponse(resp: Any, auctName: String, auctionActor: ActorRef): Unit = {
     resp match {
       case AuctionRegFine =>
         log.info("Seller {} registered successfully auction {}", sellerNname, auctName)
         auctionCounter += 1
       case _ =>
         log.warning("Seller {} couldn't register successfully auction {}", sellerNname, auctName)
+        context.stop(auctionActor)
     }
   }
 
