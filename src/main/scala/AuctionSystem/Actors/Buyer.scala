@@ -14,7 +14,7 @@ object Buyer {
   def props(buyName: String) : Props = Props(new Buyer(buyName))
   private val epsilon: Double = 0.5
 
-  class MakeBidStatus()
+  sealed abstract class MakeBidStatus()
   case object OK extends MakeBidStatus
   case object FAILED extends MakeBidStatus
   case object LOST_LEADERSHIP extends MakeBidStatus
